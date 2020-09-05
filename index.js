@@ -4,7 +4,7 @@ import _queryString from './_queryString';
 import _set from './_set';
 import _ucfirst from './_ucfirst';
 
-export default {
+module.exports = {
   _capitalize,
   _get,
   _queryString,
