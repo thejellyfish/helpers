@@ -1,3 +1,9 @@
-export capitalize from './_capitalize';
-export get from './_get';
-export ucfirst from './_ucfirst';
+import capitalize from './_capitalize';
+import get from './_get';
+import ucfirst from './_ucfirst';
+
+export default {
+  capitalize,
+  get,
+  ucfirst,
+};

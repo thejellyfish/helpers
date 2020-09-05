@@ -1,7 +1,12 @@
 {
   "name": "@thejellyfish/utils",
   "description": "",
-  "keywords": ["lodash", "get", "capitalize", "ucfirst"],
+  "keywords": [
+    "lodash",
+    "get",
+    "capitalize",
+    "ucfirst"
+  ],
   "license": "MIT",
   "author": "thejellyfish <the@jellyfish-commuting.com>",
   "main": "index.js",
@@ -11,6 +16,8 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.3.0",
     "codecov": "^3.7.0",
     "jest": "^25.2.0"
   },
