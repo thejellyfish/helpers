@@ -1,8 +1,8 @@
-import _capitalize from './_capitalize';
-import _get from './_get';
-import _queryString from './_queryString';
-import _set from './_set';
-import _ucfirst from './_ucfirst';
+const _capitalize = require('./_capitalize');
+const _get = require('./_get');
+const _queryString = require('./_queryString');
+const _set = require('./_set');
+const _ucfirst = require('./_ucfirst');
 
 module.exports = {
   _capitalize,

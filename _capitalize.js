@@ -1,6 +1,6 @@
 //-------
 // Capitalize each words
 //-------
-export default function (str) {
+module.exports = function (str) {
   return str.toLowerCase().replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
 }

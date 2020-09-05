@@ -1,7 +1,7 @@
 //-------
 // Simpler version of lodash _.set
 //-------
-export default function (object, path, value) {
+module.exports = function (object, path, value) {
   // Parse path
   const keys = path.split('.');
   const length = keys.length - 1;
