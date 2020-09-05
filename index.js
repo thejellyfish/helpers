@@ -1,9 +1,13 @@
-import capitalize from './_capitalize';
-import get from './_get';
-import ucfirst from './_ucfirst';
+import _capitalize from './_capitalize';
+import _get from './_get';
+import _queryString from './_queryString';
+import _set from './_set';
+import _ucfirst from './_ucfirst';
 
 export default {
-  capitalize,
-  get,
-  ucfirst,
+  _capitalize,
+  _get,
+  _queryString,
+  _set,
+  _ucfirst,
 };

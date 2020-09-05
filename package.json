@@ -1,9 +1,9 @@
 {
-  "name": "@thejellyfish/utils",
+  "name": "@jellyfish-commuting/helpers",
   "description": "",
   "keywords": [
+    "helpers",
     "lodash",
-    "get",
     "capitalize",
     "ucfirst"
   ],
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thejellyfish/ucfirst.git"
+    "url": "git://github.com/jellyfish-commuting/ucfirst.git"
   },
   "bugs": {
-    "url": "https://github.com/thejellyfish/ucfirst/issues"
+    "url": "https://github.com/jellyfish-commuting/ucfirst/issues"
   },
-  "homepage": "https://github.com/thejellyfish/ucfirst#readme",
+  "homepage": "https://github.com/jellyfish-commuting/ucfirst#readme",
   "publishConfig": {
     "access": "public"
   },
