@@ -22,7 +22,7 @@ export default function (object, path, value) {
   }
 
   // Set value
-  nested[keys[keys.length - 1]] = value;
+  nested[keys[length]] = value;
 
   // Merge results
   return Object.assign({}, object, target);
