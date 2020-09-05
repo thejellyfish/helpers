@@ -1,6 +1,6 @@
 {
   "name": "@jellyfish-commuting/helpers",
-  "description": "",
+  "description": "Helpers function often used",
   "keywords": [
     "helpers",
     "lodash",
@@ -23,12 +23,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jellyfish-commuting/ucfirst.git"
+    "url": "git://github.com/jellyfish-commuting/helpers.git"
   },
   "bugs": {
-    "url": "https://github.com/jellyfish-commuting/ucfirst/issues"
+    "url": "https://github.com/jellyfish-commuting/helpers/issues"
   },
-  "homepage": "https://github.com/jellyfish-commuting/ucfirst#readme",
+  "homepage": "https://github.com/jellyfish-commuting/helpers#readme",
   "publishConfig": {
     "access": "public"
   },
