@@ -1,4 +1,4 @@
-import _ucfirst from '../_ucfirst';
+const _ucfirst = require('../_ucfirst');
 
 // Start tests ...
 describe('_ucfirst', () => {

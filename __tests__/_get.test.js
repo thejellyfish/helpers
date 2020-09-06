@@ -1,4 +1,4 @@
-import _get from '../_get';
+const _get = require('../_get');
 
 const data = {
   firstname: 'John',

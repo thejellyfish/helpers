@@ -1,4 +1,4 @@
-import _set from '../_set';
+const _set = require('../_set');
 
 const data = {
   firstname: 'John',

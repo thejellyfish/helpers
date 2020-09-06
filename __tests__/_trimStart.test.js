@@ -1,4 +1,4 @@
-import _trimStart from '../_trimStart';
+const _trimStart = require('../_trimStart');
 
 // Start tests ...
 describe('_trimStart', () => {

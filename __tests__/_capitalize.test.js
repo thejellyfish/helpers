@@ -1,4 +1,4 @@
-import _capitalize from '../_capitalize';
+const _capitalize = require('../_capitalize');
 
 // Start tests ...
 describe('_capitalize', () => {

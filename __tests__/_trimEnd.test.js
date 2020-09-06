@@ -1,4 +1,4 @@
-import _trimEnd from '../_trimEnd';
+const _trimEnd = require('../_trimEnd');
 
 // Start tests ...
 describe('_trimEnd', () => {
