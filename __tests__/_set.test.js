@@ -3,6 +3,9 @@ import _set from '../_set';
 const data = {
   firstname: 'John',
   lastname: 'Doe',
+  address: {
+    street: 'lorem ipsum',
+  },
   country : {
     label: 'Algeria',
     code: 'dz',
@@ -20,5 +23,6 @@ describe('_set', () => {
     expect(_set(data, 'firstname', 'thejellyfish').firstname).toBe('thejellyfish');
     expect(_set(data, 'nickname', 'thejellyfish').nickname).toBe('thejellyfish');
     expect(_set(data, 'address.street', 'Boom !').address.street).toBe('Boom !');
+    expect(_set(data, 'level2.level1.level0.label', 'Boom !').level2.level1.level0.label).toBe('Boom !');
   });
 });
