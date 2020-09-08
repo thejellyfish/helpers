@@ -9,7 +9,7 @@ module.exports = {
   },
 
   // Value in gramms
-  weigth(value) {
+  weight(value) {
     return value;
   },
 
