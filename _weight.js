@@ -5,75 +5,62 @@ module.exports = function (weight) {
   // Init
   const result = {
     toString() {
-      return `${this.value.toFixed()} ${this.unit}`;
+      return `${this._rounded} ${this._prefix}`;
     },
   };
   let nested = result;
 
+
   // T ?
   if (weight >= 1000000) {
-    nested.value = {
-      toString() {
-        return Math.floor(weight / 1000000);
-      },
-      toFixed() {
-        // Less than 10 T
-        if (weight < 10000000) {
-          return (weight / 1000000).toFixed(2);
-        }
+    // Get precision
+    let precision = 0.1;
 
-        // Less than 100 T
-        if (weight < 100000000) {
-          return (weight / 1000000).toFixed(1);
-        }
+    // Less than 10 T
+    if (weight < 10000000) {
+      precision = 2;
 
-        // Round value is too big weight
-        return Math.round(weight / 1000000);
-      },
-    };
+    // Less than 100 T
+    } else if (weight < 100000000) {
+      precision = 1;
+    }
 
-    nested.unit = 'T';
-    nested._chunk = {};
-    nested = nested._chunk;
-  };
+    // Populate values
+    nested._prefix = 'T';
+    nested._value = weight / 1000000;
+    nested._rounded = Math.round(weight / 1000000 * 10 * precision) / (10 * precision);
+    nested._rest = {};
+
+    nested = nested._rest;
+  }
 
   // Kg ?
   if (weight >= 1000) {
-    nested.value = {
-      toString() {
-        return Math.floor(weight / 1000);
-      },
-      toFixed() {
-        // Less than 10 Kg
-        if (weight < 10000) {
-          return (weight / 1000).toFixed(2);
-        }
+    // Get precision
+    let precision = 0.1;
 
-        // Less than 100 Kg
-        if (weight < 100000) {
-          return (weight / 1000).toFixed(1);
-        }
+    // Less than 10 Kilometers
+    if (weight < 10000) {
+      precision = 2;
 
-        // Round value is too big weight
-        return Math.round(weight / 1000);
-      },
-    };
+    // Less than 100 Kilometers
+    } else if (weight < 100000) {
+      precision = 1;
+    }
 
-    nested.unit = 'Kg';
-    nested._chunk = {};
-    nested = nested._chunk;
-  };
+    // Populate values
+    nested._prefix = 'Kg';
+    nested._value = weight / 1000;
+    nested._rounded = Math.round(weight / 1000 * 10 * precision) / (10 * precision);
+    nested._rest = {};
 
-  // Add meter
-  nested.value = {
-    toString() {
-      return Math.round(weight % 1000);
-    },
-    toFixed() {
-      return Math.round(weight % 1000);
-    },
-  };
-  nested.unit = 'g';
+    nested = nested._rest;
+  }
+
+  // Add gramm
+  nested._prefix = 'g';
+  nested._value = weight % 1000;
+  nested._rounded = Math.round(weight % 1000);
 
   return result;
 };

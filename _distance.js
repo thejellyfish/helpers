@@ -5,48 +5,38 @@ module.exports = function (distance) {
   // Init
   const result = {
     toString() {
-      return `${this.value.toFixed()} ${this.unit}`;
+      return `${this._rounded} ${this._prefix}`;
     },
   };
   let nested = result;
 
   // Km ?
   if (distance >= 1000) {
-    nested.value = {
-      toString() {
-        return Math.floor(distance / 1000);
-      },
-      toFixed() {
-        // Less than 10 Kilometers
-        if (distance < 10000) {
-          return (distance / 1000).toFixed(2);
-        }
+    // Get precision
+    let precision = 0.1;
 
-        // Less than 100 Kilometers
-        if (distance < 100000) {
-          return (distance / 1000).toFixed(1);
-        }
+    // Less than 10 Kilometers
+    if (distance < 10000) {
+      precision = 2;
 
-        // Round value is too big distance
-        return Math.round(distance / 1000);
-      },
-    };
+    // Less than 100 Kilometers
+    } else if (distance < 100000) {
+      precision = 1;
+    }
 
-    nested.unit = 'Km';
-    nested._chunk = {};
-    nested = nested._chunk;
-  };
+    // Populate values
+    nested._prefix = 'Km';
+    nested._value = distance / 1000;
+    nested._rounded = Math.round(distance / 1000 * 10 * precision) / (10 * precision);
+    nested._rest = {};
+
+    nested = nested._rest;
+  }
 
   // Add meter
-  nested.value = {
-    toString() {
-      return Math.round(distance % 1000);
-    },
-    toFixed() {
-      return Math.round(distance % 1000);
-    },
-  };
-  nested.unit = 'm';
+  nested._prefix = 'm';
+  nested._value = distance % 1000;
+  nested._rounded = Math.round(distance % 1000);
 
   return result;
 };
