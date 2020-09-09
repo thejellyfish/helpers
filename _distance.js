@@ -3,11 +3,7 @@
 //-------
 module.exports = function (distance) {
   // Init
-  const result = {
-    toString() {
-      return `${this._rounded} ${this._prefix}`;
-    },
-  };
+  const result = {};
   let nested = result;
 
   // Km ?
@@ -25,18 +21,21 @@ module.exports = function (distance) {
     }
 
     // Populate values
-    nested._prefix = 'Km';
-    nested._value = distance / 1000;
-    nested._rounded = Math.round(distance / 1000 * 10 * precision) / (10 * precision);
-    nested._rest = {};
+    nested.prefix = 'Km';
+    nested.value = distance / 1000;
+    nested.rounded = Math.round(distance / 1000 * 10 * precision) / (10 * precision);
+    nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+    nested.rest = {};
 
-    nested = nested._rest;
+    nested = nested.rest;
   }
 
   // Add meter
-  nested._prefix = 'm';
-  nested._value = distance % 1000;
-  nested._rounded = Math.round(distance % 1000);
+  nested.prefix = 'm';
+  nested.value = distance % 1000;
+  nested.rounded = Math.round(distance % 1000);
+  nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+  delete nested.rest;
 
   return result;
 };

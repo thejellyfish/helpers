@@ -4,46 +4,47 @@
 module.exports = function (duration) {
   // Init
   const result = {
-    _value: duration,
-    _rounded: duration,
-    _prefix: 'sec',
-    _rest: {},
+    value: 0,
+    rounded: 0,
+    prefix: 'sec',
   };
   let nested = result;
 
    // Calculate intervals
   const units = ['j', 'h', 'min', 'sec'];
+  const ratio = [86400, 3600, 60, 1];
   const minutes = Math.floor(duration / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
 
   // Parse duration (days, hours, minutes, seconds)
   [days, hours % 24, minutes % 60, duration % 60].forEach((item, i) => {
-    if (item || result._prefix !== 'sec') {
+    if (item || result.prefix !== 'sec') {
       // Populate
-      nested._value = item;
-      nested._rounded = item;
-      nested._prefix = units[i];
-      nested._rest = {};
+      nested.value = item;
+      nested.rounded = item; //Math.round(duration / ratio[i]);
+      nested.prefix = units[i];
 
       // toString
       nested.toString = function() {
-        return `${this._rounded} ${this._prefix}`;
+        return `${this.rounded} ${this.prefix}`;
       };
 
       // Nested
-      nested = nested._rest;
+      if (i < 3) {
+        nested.rest = {};
+        nested = nested.rest;
+      }
     }
   });
 
-
-  result.toString = function() {
+  result.toString = function () {
     // Has rest ?
-    if (this._rest._value) {
-      return `${this._value} ${this._prefix} et ${this._rest}`;
+    if (this.rest && this.rest.value) {
+      return `${this.value} ${this.prefix} et ${this.rest}`;
     }
 
-    return `${this._rounded} ${this._prefix}`;
+    return `${this.rounded} ${this.prefix}`;
   };
 
   return result;

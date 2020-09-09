@@ -13,13 +13,13 @@ describe('_distance', () => {
   });
 
   it('expect human distance rest', () => {
-    const { _value, _rounded, _prefix, _rest } = _distance(123450);
+    const { value, rounded, prefix, rest } = _distance(123450);
 
-    expect(_value).toBe(123.45);
-    expect(_rounded).toBe(123);
-    expect(_prefix).toBe('Km');
-    expect(_rest._value).toBe(450);
-    expect(_rest._rounded).toBe(450);
-    expect(_rest._prefix).toBe('m');
+    expect(value).toBe(123.45);
+    expect(rounded).toBe(123);
+    expect(prefix).toBe('Km');
+    expect(rest.value).toBe(450);
+    expect(rest.rounded).toBe(450);
+    expect(rest.prefix).toBe('m');
   });
 });

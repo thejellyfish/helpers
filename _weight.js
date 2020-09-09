@@ -3,11 +3,7 @@
 //-------
 module.exports = function (weight) {
   // Init
-  const result = {
-    toString() {
-      return `${this._rounded} ${this._prefix}`;
-    },
-  };
+  const result = {};
   let nested = result;
 
 
@@ -26,12 +22,13 @@ module.exports = function (weight) {
     }
 
     // Populate values
-    nested._prefix = 'T';
-    nested._value = weight / 1000000;
-    nested._rounded = Math.round(weight / 1000000 * 10 * precision) / (10 * precision);
-    nested._rest = {};
+    nested.prefix = 'T';
+    nested.value = weight / 1000000;
+    nested.rounded = Math.round(weight / 1000000 * 10 * precision) / (10 * precision);
+    nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+    nested.rest = {};
 
-    nested = nested._rest;
+    nested = nested.rest;
   }
 
   // Kg ?
@@ -49,18 +46,21 @@ module.exports = function (weight) {
     }
 
     // Populate values
-    nested._prefix = 'Kg';
-    nested._value = weight / 1000;
-    nested._rounded = Math.round(weight / 1000 * 10 * precision) / (10 * precision);
-    nested._rest = {};
+    nested.prefix = 'Kg';
+    nested.value = weight / 1000;
+    nested.rounded = Math.round(weight / 1000 * 10 * precision) / (10 * precision);
+    nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+    nested.rest = {};
 
-    nested = nested._rest;
+    nested = nested.rest;
   }
 
   // Add gramm
-  nested._prefix = 'g';
-  nested._value = weight % 1000;
-  nested._rounded = Math.round(weight % 1000);
+  nested.prefix = 'g';
+  nested.value = weight % 1000;
+  nested.rounded = Math.round(weight % 1000);
+  nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+  delete nested.rest;
 
   return result;
 };

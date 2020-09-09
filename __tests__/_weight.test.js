@@ -13,13 +13,14 @@ describe('_weight', () => {
   });
 
   it('expect human weight rest', () => {
-    const { _value, _rounded, _prefix, _rest } = _weight(123450);
+    const { value, rounded, prefix, rest } = _weight(123450);
 
-    expect(_value).toBe(123.45);
-    expect(_rounded).toBe(123);
-    expect(_prefix).toBe('Kg');
-    expect(_rest._value).toBe(450);
-    expect(_rest._rounded).toBe(450);
-    expect(_rest._prefix).toBe('g');
+    expect(value).toBe(123.45);
+    expect(rounded).toBe(123);
+    expect(prefix).toBe('Kg');
+    expect(`${rest}`).toBe('450 g');
+    expect(rest.value).toBe(450);
+    expect(rest.rounded).toBe(450);
+    expect(rest.prefix).toBe('g');
   });
 });
