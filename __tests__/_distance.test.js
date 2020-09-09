@@ -1,4 +1,4 @@
-const _distance = require('../_distance');
+const { _distance } = require('..');
 
 // Start tests ...
 describe('_distance', () => {

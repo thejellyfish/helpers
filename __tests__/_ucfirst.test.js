@@ -1,4 +1,4 @@
-const _ucfirst = require('../_ucfirst');
+const { _ucfirst } = require('..');
 
 // Start tests ...
 describe('_ucfirst', () => {

@@ -1,4 +1,4 @@
-const _set = require('../_set');
+const { _set } = require('..');
 
 const data = {
   firstname: 'John',

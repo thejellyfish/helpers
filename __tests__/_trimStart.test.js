@@ -1,4 +1,4 @@
-const _trimStart = require('../_trimStart');
+const { _trimStart } = require('..');
 
 // Start tests ...
 describe('_trimStart', () => {

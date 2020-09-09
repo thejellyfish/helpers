@@ -1,4 +1,4 @@
-const _duration = require('../_duration');
+const { _duration } = require('..');
 
 // Start tests ...
 describe('_duration', () => {

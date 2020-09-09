@@ -1,4 +1,5 @@
 const _capitalize = require('./_capitalize');
+const _deburr = require('./_deburr');
 const _distance = require('./_distance');
 const _duration = require('./_duration');
 const _get = require('./_get');
@@ -12,6 +13,7 @@ const _weight = require('./_weight');
 
 module.exports = {
   _capitalize,
+  _deburr,
   _distance,
   _duration,
   _get,

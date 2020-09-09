@@ -1,4 +1,4 @@
-const _reduce = require('../_reduce');
+const { _reduce } = require('..');
 
 const data = {
   a: 1,

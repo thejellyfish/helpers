@@ -1,4 +1,4 @@
-const _trimEnd = require('../_trimEnd');
+const { _trimEnd } = require('..');
 
 // Start tests ...
 describe('_trimEnd', () => {

@@ -1,4 +1,4 @@
-const _weight = require('../_weight');
+const { _weight } = require('..');
 
 // Start tests ...
 describe('_weight', () => {

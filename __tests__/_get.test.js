@@ -1,4 +1,4 @@
-const _get = require('../_get');
+const { _get } = require('..');
 
 const data = {
   firstname: 'John',
