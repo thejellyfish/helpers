@@ -7,8 +7,10 @@ describe('_distance', () => {
     expect(`${_distance(12)}`).toBe('12 m');
     expect(`${_distance(1000)}`).toBe('1 Km');
     expect(`${_distance(1001)}`).toBe('1 Km');
-    expect(`${_distance(1230)}`).toBe('1.25 Km');
+    expect(`${_distance(1230)}`).toBe('1.23 Km');
+    expect(`${_distance(1237)}`).toBe('1.24 Km');
     expect(`${_distance(12340)}`).toBe('12.3 Km');
+    expect(`${_distance(12370)}`).toBe('12.4 Km');
     expect(`${_distance(123450)}`).toBe('123 Km');
   });
 

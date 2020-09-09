@@ -10,21 +10,21 @@ module.exports = function (weight) {
   // T ?
   if (weight >= 1000000) {
     // Get precision
-    let precision = 0.1;
+    let precision = 1;
 
     // Less than 10 T
     if (weight < 10000000) {
-      precision = 2;
+      precision = 100;
 
     // Less than 100 T
     } else if (weight < 100000000) {
-      precision = 1;
+      precision = 10;
     }
 
     // Populate values
     nested.prefix = 'T';
     nested.value = weight / 1000000;
-    nested.rounded = Math.round(weight / 1000000 * 10 * precision) / (10 * precision);
+    nested.rounded = Math.round((weight / 1000000) * precision) / precision;
     nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
     nested.rest = {};
 
@@ -34,21 +34,21 @@ module.exports = function (weight) {
   // Kg ?
   if (weight >= 1000) {
     // Get precision
-    let precision = 0.1;
+    let precision = 1;
 
     // Less than 10 Kilometers
     if (weight < 10000) {
-      precision = 2;
+      precision = 100;
 
     // Less than 100 Kilometers
     } else if (weight < 100000) {
-      precision = 1;
+      precision = 10;
     }
 
     // Populate values
     nested.prefix = 'Kg';
     nested.value = weight / 1000;
-    nested.rounded = Math.round(weight / 1000 * 10 * precision) / (10 * precision);
+    nested.rounded = Math.round((weight / 1000) * precision) / precision;
     nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
     nested.rest = {};
 

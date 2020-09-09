@@ -7,8 +7,10 @@ describe('_weight', () => {
     expect(`${_weight(12)}`).toBe('12 g');
     expect(`${_weight(1000)}`).toBe('1 Kg');
     expect(`${_weight(1001)}`).toBe('1 Kg');
-    expect(`${_weight(1230)}`).toBe('1.25 Kg');
+    expect(`${_weight(1230)}`).toBe('1.23 Kg');
+    expect(`${_weight(1237)}`).toBe('1.24 Kg');
     expect(`${_weight(12340)}`).toBe('12.3 Kg');
+    expect(`${_weight(12370)}`).toBe('12.4 Kg');
     expect(`${_weight(123450)}`).toBe('123 Kg');
   });
 
