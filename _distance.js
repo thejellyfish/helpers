@@ -26,8 +26,10 @@ module.exports = function (distance) {
     nested.prefix = 'Km';
     nested.value = distance / 1000;
     nested.rounded = _round(distance / 1000, precision);
-    nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
     nested.rest = {};
+    nested.toString = function () {
+      return `${this.rounded} ${this.prefix}`;
+    };
 
     nested = nested.rest;
   }
@@ -36,7 +38,11 @@ module.exports = function (distance) {
   nested.prefix = 'm';
   nested.value = distance % 1000;
   nested.rounded = Math.round(distance % 1000);
-  nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+  nested.toString = function () {
+    return `${this.rounded} ${this.prefix}`;
+  };
+
+  // Delete rest prop of deepest obj
   delete nested.rest;
 
   return result;

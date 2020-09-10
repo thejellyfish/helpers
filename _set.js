@@ -24,4 +24,4 @@ module.exports = function (object, path, value) {
 
   // Return result
   return result;
-}
+};

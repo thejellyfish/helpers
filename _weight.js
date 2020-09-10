@@ -8,7 +8,6 @@ module.exports = function (weight) {
   const result = {};
   let nested = result;
 
-
   // T ?
   if (weight >= 1000000) {
     // Get precision
@@ -27,8 +26,10 @@ module.exports = function (weight) {
     nested.prefix = 'T';
     nested.value = weight / 1000000;
     nested.rounded = _round(weight / 1000000, precision);
-    nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
     nested.rest = {};
+    nested.toString = function () {
+      return `${this.rounded} ${this.prefix}`;
+    };
 
     nested = nested.rest;
   }
@@ -51,8 +52,10 @@ module.exports = function (weight) {
     nested.prefix = 'Kg';
     nested.value = weight / 1000;
     nested.rounded = _round(weight / 1000, precision);
-    nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
     nested.rest = {};
+    nested.toString = function () {
+      return `${this.rounded} ${this.prefix}`;
+    };
 
     nested = nested.rest;
   }
@@ -61,7 +64,11 @@ module.exports = function (weight) {
   nested.prefix = 'g';
   nested.value = weight % 1000;
   nested.rounded = Math.round(weight % 1000);
-  nested.toString = function() { return `${this.rounded} ${this.prefix}`; };
+  nested.toString = function () {
+    return `${this.rounded} ${this.prefix}`;
+  };
+
+  // Delete rest prop of deepest obj
   delete nested.rest;
 
   return result;

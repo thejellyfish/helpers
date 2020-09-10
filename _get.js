@@ -12,4 +12,4 @@ module.exports = function (object, path, defaultValue) {
   }
 
   return target !== undefined && index === keys.length ? target : defaultValue;
-}
+};

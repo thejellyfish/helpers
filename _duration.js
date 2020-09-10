@@ -10,9 +10,9 @@ module.exports = function (duration) {
   };
   let nested = result;
 
-   // Calculate intervals
+  // Calculate intervals
   const units = ['j', 'h', 'min', 'sec'];
-  const ratio = [86400, 3600, 60, 1];
+  // const ratio = [86400, 3600, 60, 1];
   const minutes = Math.floor(duration / 60);
   const hours = Math.floor(minutes / 60);
   const days = Math.floor(hours / 24);
@@ -22,11 +22,11 @@ module.exports = function (duration) {
     if (item || result.prefix !== 'sec') {
       // Populate
       nested.value = item;
-      nested.rounded = item; //Math.round(duration / ratio[i]);
+      nested.rounded = item; // Math.round(duration / ratio[i]);
       nested.prefix = units[i];
 
       // toString
-      nested.toString = function() {
+      nested.toString = function () {
         return `${this.rounded} ${this.prefix}`;
       };
 
