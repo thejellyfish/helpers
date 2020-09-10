@@ -1,12 +1,12 @@
+const _reduce = require('./_reduce');
+
 //-------
 // queryString
 //-------
 module.exports = function (data) {
-  return Object.keys(data).reduce((acc, key) => {
-    if (Array.isArray(data[key])) {
-      return acc.concat(data[key].map(item => `${encodeURIComponent(key)}[]=${encodeURIComponent(item)}`).join('&'));
-    }
-
-    return acc.concat(`${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`);
-  }, []).join('&');
+  return _reduce(data, (acc, item, key) => (
+    Array.isArray(item)
+      ? acc.concat(item.map(item => `${encodeURIComponent(key)}[]=${encodeURIComponent(item)}`).join('&'))
+      : acc.concat(`${encodeURIComponent(key)}=${encodeURIComponent(item)}`)
+  ), []).join('&');
 }

@@ -23,6 +23,7 @@ describe('_set', () => {
     expect(_set(data, 'firstname', 'thejellyfish').firstname).toBe('thejellyfish');
     expect(_set(data, 'nickname', 'thejellyfish').nickname).toBe('thejellyfish');
     expect(_set(data, 'address.street', 'Boom !').address.street).toBe('Boom !');
+    expect(_set(data, 'address', 'Boom !').address).toBe('Boom !');
     expect(_set(data, 'level2.level1.level0.label', 'Boom !').level2.level1.level0.label).toBe('Boom !');
   });
 });

@@ -4,26 +4,24 @@
 module.exports = function (object, path, value) {
   // Parse path
   const keys = path.split('.');
-  const length = keys.length - 1;
+  const last = keys.pop();
 
   // Copy object
-  const target = { ...object };
-  let nested = target;
-  let index = 0;
+  const result = { ...object };
+  let nested = result;
 
-  // Set missing attribute in target
-  while (index < length) {
-    if (!nested[keys[index]]) {
-      nested[keys[index]] = {};
+  // Set missing attribute in result
+  keys.forEach(key => {
+    if (!nested[key]) {
+      nested[key] = {};
     }
 
-    nested = nested[keys[index]];
-    index += 1;
-  }
+    nested = nested[key];
+  });
 
   // Set value
-  nested[keys[length]] = value;
+  nested[last] = value;
 
-  // Merge results
-  return Object.assign({}, object, target);
+  // Return result
+  return result;
 }
