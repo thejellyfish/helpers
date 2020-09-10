@@ -1,6 +1,7 @@
 const { _round } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_round', () => {
   it('expect round value', () => {
     const value = 3.14159265359;

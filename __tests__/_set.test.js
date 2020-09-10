@@ -18,6 +18,7 @@ const data = {
 };
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_set', () => {
   it('expect set value in object', () => {
     expect(_set(data, 'firstname', 'thejellyfish').firstname).toBe('thejellyfish');

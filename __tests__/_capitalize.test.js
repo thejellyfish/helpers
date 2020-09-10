@@ -1,6 +1,7 @@
 const { _capitalize } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_capitalize', () => {
   it('expect capitalize sentence', () => {
     const sentence = 'Aurelia aurita also called the common jellyfish, moon jellyfish ...';

@@ -1,6 +1,7 @@
 const { _distance } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_distance', () => {
   it('expect human distance', () => {
     expect(`${_distance(0)}`).toBe('0 m');
@@ -15,7 +16,12 @@ describe('_distance', () => {
   });
 
   it('expect human distance rest', () => {
-    const { value, rounded, prefix, rest } = _distance(123450);
+    const {
+      value,
+      rounded,
+      prefix,
+      rest,
+    } = _distance(123450);
 
     expect(value).toBe(123.45);
     expect(rounded).toBe(123);

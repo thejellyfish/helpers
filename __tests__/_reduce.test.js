@@ -9,6 +9,7 @@ const data = {
 };
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_reduce', () => {
   it('expect sum while reducing', () => {
     const sum = _reduce(data, (acc, item) => acc + item, 0);

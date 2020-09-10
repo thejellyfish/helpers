@@ -1,6 +1,7 @@
 const { _trimStart } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_trimStart', () => {
   it('expect trim chars from string', () => {
     expect(_trimStart('jellyfish')).toBe('jellyfish');

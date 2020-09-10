@@ -1,6 +1,7 @@
 const { _weight } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_weight', () => {
   it('expect human weight', () => {
     expect(`${_weight(0)}`).toBe('0 g');
@@ -15,7 +16,12 @@ describe('_weight', () => {
   });
 
   it('expect human weight rest', () => {
-    const { value, rounded, prefix, rest } = _weight(123450);
+    const {
+      value,
+      rounded,
+      prefix,
+      rest,
+    } = _weight(123450);
 
     expect(value).toBe(123.45);
     expect(rounded).toBe(123);

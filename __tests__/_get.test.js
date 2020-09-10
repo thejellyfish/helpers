@@ -1,20 +1,21 @@
 const { _get } = require('..');
 
-const data = {
+const data = {
   firstname: 'John',
   lastname: 'Doe',
-  country : {
+  country: {
     label: 'Algeria',
     code: 'dz',
   },
   payload: {
     results: {
-      hits: [1, 2, 3]
+      hits: [1, 2, 3],
     },
   },
 };
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_get', () => {
   it('expect retrieve value of path', () => {
     expect(_get(data, 'firstname')).toBe('John');

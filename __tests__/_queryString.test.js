@@ -1,6 +1,7 @@
 const { _queryString } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_queryString', () => {
   it('expect queryString of params', () => {
     // Init params

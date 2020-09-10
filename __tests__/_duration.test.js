@@ -1,6 +1,7 @@
 const { _duration } = require('..');
 
 // Start tests ...
+/* eslint-disable no-undef */
 describe('_duration', () => {
   it('expect human duration', () => {
     expect(`${_duration(12)}`).toBe('12 sec');
