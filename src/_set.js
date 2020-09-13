@@ -11,13 +11,13 @@ module.exports = function (object, path, value) {
   let nested = result;
 
   // Set missing attribute in result
-  keys.forEach(key => {
-    if (!nested[key]) {
-      nested[key] = {};
+  for (let i = 0; i < keys.length; i += 1) {
+    if (!nested[keys[i]]) {
+      nested[keys[i]] = {};
     }
 
-    nested = nested[key];
-  });
+    nested = nested[keys[i]];
+  }
 
   // Set value
   nested[last] = value;

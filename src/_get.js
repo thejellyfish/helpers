@@ -3,7 +3,7 @@
 //-------
 module.exports = function (object, path, defaultValue) {
   const keys = path.split('.');
-  let target = { ...object };
+  let target = object;
   let index = 0;
 
   while (target && index < keys.length) {
