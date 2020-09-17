@@ -1,3 +1,5 @@
+const _isObject = require('./_isObject');
+
 //-------
 // Simpler version of lodash _.set
 //-------
@@ -12,7 +14,7 @@ module.exports = function (object, path, value) {
 
   // Set missing attribute in result
   keys.forEach(key => {
-    if (!nested[key]) {
+    if (!_isObject(nested[key])) {
       nested[key] = {};
     }
 

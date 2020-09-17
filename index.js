@@ -3,6 +3,7 @@ const _deburr = require('./_deburr');
 const _distance = require('./_distance');
 const _duration = require('./_duration');
 const _get = require('./_get');
+const _isObject = require('./_isObject');
 const _queryString = require('./_queryString');
 const _reduce = require('./_reduce');
 const _round = require('./_round');
@@ -18,6 +19,7 @@ module.exports = {
   _distance,
   _duration,
   _get,
+  _isObject,
   _queryString,
   _reduce,
   _round,
