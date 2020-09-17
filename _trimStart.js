@@ -5,12 +5,9 @@ module.exports = function (string, patterns = ' ') {
   // Init vars
   const chars = [...patterns];
 
-  // Get index to slice string
+  // Get first index not includes in pattern letters
   const index = [...string].findIndex(letter => !chars.includes(letter));
 
-  if (index !== -1) {
-    return string.substring(index);
-  }
-
-  return string;
+  // Return the substring from index
+  return string.substring(index);
 };
