@@ -4,6 +4,7 @@ const _distance = require('./_distance');
 const _duration = require('./_duration');
 const _get = require('./_get');
 const _isObject = require('./_isObject');
+const _map = require('./_map');
 const _queryString = require('./_queryString');
 const _reduce = require('./_reduce');
 const _round = require('./_round');
@@ -20,6 +21,7 @@ module.exports = {
   _duration,
   _get,
   _isObject,
+  _map,
   _queryString,
   _reduce,
   _round,
