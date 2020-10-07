@@ -7,6 +7,7 @@ const _isObject = require('./_isObject');
 const _queryString = require('./_queryString');
 const _reduce = require('./_reduce');
 const _round = require('./_round');
+const _secureCompare = require('./_secureCompare');
 const _set = require('./_set');
 const _trimEnd = require('./_trimEnd');
 const _trimStart = require('./_trimStart');
@@ -23,6 +24,7 @@ module.exports = {
   _queryString,
   _reduce,
   _round,
+  _secureCompare,
   _set,
   _trimEnd,
   _trimStart,
