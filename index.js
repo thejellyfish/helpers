@@ -6,6 +6,7 @@ const _get = require('./_get');
 const _isObject = require('./_isObject');
 const _map = require('./_map');
 const _queryString = require('./_queryString');
+const _rand = require('./_rand');
 const _range = require('./_range');
 const _reduce = require('./_reduce');
 const _round = require('./_round');
@@ -25,6 +26,7 @@ module.exports = {
   _isObject,
   _map,
   _queryString,
+  _rand,
   _range,
   _reduce,
   _round,
