@@ -15,6 +15,7 @@ const _set = require('./_set');
 const _trimEnd = require('./_trimEnd');
 const _trimStart = require('./_trimStart');
 const _ucfirst = require('./_ucfirst');
+const _uniq = require('./_uniq');
 const _weight = require('./_weight');
 
 module.exports = {
@@ -35,5 +36,6 @@ module.exports = {
   _trimEnd,
   _trimStart,
   _ucfirst,
+  _uniq,
   _weight,
 };
