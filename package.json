@@ -1,5 +1,5 @@
 {
-  "name": "@jellyfish-commuting/helpers",
+  "name": "@jollie/helpers",
   "description": "Helpers function often used",
   "keywords": [
     "helpers",
@@ -26,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jellyfish-commuting/helpers.git"
+    "url": "git://github.com/thejellyfish/helpers.git"
   },
   "bugs": {
-    "url": "https://github.com/jellyfish-commuting/helpers/issues"
+    "url": "https://github.com/thejellyfish/helpers/issues"
   },
-  "homepage": "https://github.com/jellyfish-commuting/helpers#readme",
+  "homepage": "https://github.com/thejellyfish/helpers#readme",
   "publishConfig": {
     "access": "public"
   },
