@@ -1,4 +1,4 @@
-const { _weight } = require('..');
+const { _weight } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

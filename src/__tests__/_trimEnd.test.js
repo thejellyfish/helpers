@@ -1,4 +1,4 @@
-const { _trimEnd } = require('..');
+const { _trimEnd } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

@@ -1,4 +1,4 @@
-const { _isObject } = require('..');
+const { _isObject } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef, no-new-object, prefer-arrow-callback, space-before-function-paren */

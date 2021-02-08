@@ -1,4 +1,4 @@
-const { _rand } = require('..');
+const { _rand } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

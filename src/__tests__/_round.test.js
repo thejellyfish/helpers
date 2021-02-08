@@ -1,4 +1,4 @@
-const { _round } = require('..');
+const { _round } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

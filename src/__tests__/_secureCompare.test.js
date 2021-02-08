@@ -1,4 +1,4 @@
-const { _secureCompare } = require('..');
+const { _secureCompare } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */
