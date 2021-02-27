@@ -1,5 +1,5 @@
 //-------
-// Simpler version of lodash _.reduce
+// Reducer function on each element
 //-------
 module.exports = function (object, iteratee, accumulator) {
   return Object.keys(object).reduce(

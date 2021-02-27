@@ -1,5 +1,4 @@
 //-------
-// Simpler version of lodash _.range
 // Return array from start to end INCLUDED (beware, different than lodash where end is not included)
 //-------
 module.exports = function (start, end, step = 1) {

@@ -1,7 +1,7 @@
 const _isObject = require('./_isObject');
 
 //-------
-// Simpler version of lodash _.set
+// Return new object with value at path of object
 //-------
 module.exports = function (object, path, value) {
   // Parse path

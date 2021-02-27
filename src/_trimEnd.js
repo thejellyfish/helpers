@@ -1,5 +1,5 @@
 //-------
-// Simpler version of lodash _.trimEnd
+// Removes trailing whitespace or specified characters
 //-------
 module.exports = function (string, patterns = ' ') {
   // Init vars
