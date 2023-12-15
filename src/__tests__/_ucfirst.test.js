@@ -1,4 +1,4 @@
-const { _ucfirst } = require('..');
+const { _ucfirst } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

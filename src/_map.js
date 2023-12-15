@@ -1,5 +1,5 @@
 //-------
-// Simpler version of lodash _.map
+// Creates a new object populated with the results of iteratee
 //-------
 module.exports = function (object, iteratee) {
   const result = {};

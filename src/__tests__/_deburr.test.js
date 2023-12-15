@@ -1,4 +1,4 @@
-const { _deburr } = require('..');
+const { _deburr } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

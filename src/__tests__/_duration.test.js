@@ -1,4 +1,4 @@
-const { _duration } = require('..');
+const { _duration } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

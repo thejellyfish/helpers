@@ -1,4 +1,4 @@
-const { _queryString } = require('..');
+const { _queryString } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

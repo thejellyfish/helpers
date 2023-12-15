@@ -1,4 +1,4 @@
-const { _distance } = require('..');
+const { _distance } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

@@ -1,4 +1,4 @@
-const { _map } = require('..');
+const { _map } = require('../..');
 
 const data = {
   a: 0,

@@ -1,4 +1,4 @@
-const { _uniq } = require('..');
+const { _uniq } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

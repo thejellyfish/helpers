@@ -1,4 +1,4 @@
-const { _capitalize } = require('..');
+const { _capitalize } = require('../..');
 
 // Start tests ...
 /* eslint-disable no-undef */

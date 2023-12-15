@@ -1,5 +1,5 @@
 //-------
-// Simpler version of lodash _.get
+// Gets the value at path of object
 //-------
 module.exports = function (object, path, defaultValue) {
   const keys = path.split('.');
