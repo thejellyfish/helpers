@@ -4,10 +4,10 @@
 module.exports = function (duration, options = {}) {
   // Labels
   const labels = {
-    days: 'days',
-    hours: 'hours',
-    minutes: 'minutes',
-    seconds: 'seconds',
+    days: ' days',
+    hours: ' hours',
+    minutes: ' minutes',
+    seconds: ' seconds',
     glue: ' and ',
     ...options
   };
