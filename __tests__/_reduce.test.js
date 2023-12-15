@@ -18,7 +18,7 @@ describe('_reduce', () => {
     const keys = _reduce(data, (acc, item, key) => acc.concat(key), '');
 
     expect(sum).toBe(15);
-    expect(concat).toStrictEqual([1,2,3,4,5]);
+    expect(concat).toStrictEqual([1, 2, 3, 4, 5]);
     expect(string).toBe('12345');
     expect(keys).toBe('abcde');
   });

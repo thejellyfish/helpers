@@ -13,6 +13,12 @@ const data = {
 describe('_map', () => {
   it('expect increment while map', () => {
     const result = _map(data, item => item + 1);
-    expect(result).toEqual([1, 2, 3, 4, 5]);
+    expect(result).toEqual({
+      a: 1,
+      b: 2,
+      c: 3,
+      d: 4,
+      e: 5,
+    });
   });
 });

@@ -1,17 +1,23 @@
 //-------
 // Return human format of duration
 //-------
-module.exports = function (duration) {
-  // Init
-  const result = {
-    value: 0,
-    rounded: 0,
-    prefix: 'sec',
+module.exports = function (duration, options = {}) {
+  // Labels
+  const labels = {
+    days: 'days',
+    hours: 'hours',
+    minutes: 'minutes',
+    seconds: 'seconds',
+    glue: ' and ',
+    ...options
   };
+
+  // Init vars
+  const result = { value: 0, rounded: 0, prefix: labels.seconds };
   let nested = result;
 
   // Calculate intervals
-  const units = ['j', 'h', 'min', 'sec'];
+  const units = [labels.days, labels.hours, labels.minutes, labels.seconds];
   // const ratio = [86400, 3600, 60, 1];
   const minutes = Math.floor(duration / 60);
   const hours = Math.floor(minutes / 60);
@@ -19,7 +25,7 @@ module.exports = function (duration) {
 
   // Parse duration (days, hours, minutes, seconds)
   [days, hours % 24, minutes % 60, duration % 60].forEach((item, i) => {
-    if (item || result.prefix !== 'sec') {
+    if (item || result.prefix !== labels.seconds) {
       // Populate
       nested.value = item;
       nested.rounded = item; // Math.round(duration / ratio[i]);
@@ -27,7 +33,7 @@ module.exports = function (duration) {
 
       // toString
       nested.toString = function () {
-        return `${this.rounded} ${this.prefix}`;
+        return `${this.rounded}${this.prefix}`;
       };
 
       // Nested
@@ -41,10 +47,10 @@ module.exports = function (duration) {
   result.toString = function () {
     // Has rest ?
     if (this.rest && this.rest.value) {
-      return `${this.value} ${this.prefix} et ${this.rest}`;
+      return `${this.value}${this.prefix}${labels.glue}${this.rest}`;
     }
 
-    return `${this.rounded} ${this.prefix}`;
+    return `${this.rounded}${this.prefix}`;
   };
 
   return result;

@@ -1,18 +1,18 @@
 const { _set } = require('..');
 
-const data = {
+const data = {
   firstname: 'John',
   lastname: 'Doe',
   address: {
     street: 'lorem ipsum',
   },
-  country : {
+  country: {
     label: 'Algeria',
     code: 'dz',
   },
   payload: {
     results: {
-      hits: [1, 2, 3]
+      hits: [1, 2, 3],
     },
   },
 };
