@@ -8,9 +8,8 @@ module.exports = function (object, path, value) {
   const keys = path.split('.');
   const last = keys.pop();
 
-  // Copy object
-  const result = { ...object };
-  let nested = result;
+  // Init vars
+  let nested = object;
 
   // Set missing attribute in result
   for (let i = 0; i < keys.length; i += 1) {
@@ -24,6 +23,6 @@ module.exports = function (object, path, value) {
   // Set value
   nested[last] = value;
 
-  // Return result
-  return result;
+  // Return object
+  return object;
 };
