@@ -1,5 +1,5 @@
-import _get from './_get';
-import _set from './_set';
+const _get = require('./_get');
+const _set = require('./_set');
 
 //-------
 // Pick attributes
